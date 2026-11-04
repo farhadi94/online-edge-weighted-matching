@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "repository": "https://github.com/farhadi94/online-edge-weighted-matching",
+  "canonical_sources": {
+    "paper/verifiers/verify_score_two.py": "708a5e3954121c29422aa629e6a96dba2fa0339ecfc9ce5ee52fc26dcfd68ec0",
+    "paper/verifiers/verify_tournament_two.py": "2a252d9cb23876db26fee16dd53e7fac4ef6036677b44b4c6bde258fb38c3bf0"
+  }
+}

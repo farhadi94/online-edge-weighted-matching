@@ -1,0 +1,6 @@
+import Candidate1000Assembly
+import CertifiedSelector1000
+#print axioms WeightedMatching.GenericCoefficient.finiteCandidate1000_coefficient_lower
+#print axioms WeightedMatching.GenericCoefficient.main_0556195_of_selector
+#print axioms WeightedMatching.Tournament1000.finite_seed_1000_negativelyAssociated
+#print axioms WeightedMatching.Tournament1000.finite_seed_1000_multiset_selector

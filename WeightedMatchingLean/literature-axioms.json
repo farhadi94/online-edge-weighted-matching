@@ -1,0 +1,89 @@
+{
+  "authorization": "The supplied release registers these two literature assumptions. Their presence is a formal trust boundary, not a proof of the cited results.",
+  "policy": "Only the two declarations named below are accepted. The requested approximation theorem and its numerical bounds are not admissible axioms.",
+  "axioms": {
+    "WeightedMatching.bc21_seed_multiset_selector": {
+      "declaration": "WeightedMatching.bc21_seed_multiset_selector",
+      "kind": "explicit registered literature assumption",
+      "source": {
+        "authors": [
+          "Guy Blanc",
+          "Moses Charikar"
+        ],
+        "title": "Multiway Online Correlated Selection",
+        "version": "arXiv:2106.05579v2, 20 September 2021",
+        "url": "https://arxiv.org/pdf/2106.05579v2",
+        "locations": [
+          "Figure 2 and Theorem 4, pages 7-8",
+          "Lemma 9.11, pages 31-32",
+          "Lemma 9.12, pages 33-34",
+          "Theorem 8 and Lemmas 9.13-9.15, pages 34-36",
+          "Figure 6, page 34"
+        ]
+      },
+      "formulation": "Finite-state common-random-tape reformulation of the calibrated multiset selector and its arbitrary-subset failure guarantee.",
+      "premises": [
+        "The seed values lie in [0,1].",
+        "The finite seed prefixes are negatively associated.",
+        "The ordinary age kernel has the specified stationary initial law.",
+        "The miss kernel is exactly the joint age and artificial failure transition.",
+        "Every block multiplicity 1 <= r < m satisfies the reference stop-loss inequality at every real threshold in [0,1]."
+      ],
+      "conclusion": "There is a single probability space and a measurable prefix-only multiset selector, supported in the current multiset, whose arbitrary-subset nonselection probability is bounded by the corresponding stationary miss-word mass.",
+      "correspondence": {
+        "calibration": "Lemma 9.12, proved using Theorem 8 and Lemmas 9.13-9.15.",
+        "arbitrary_subset": "Lemma 9.11 is explicitly stated for any subset of rounds, after conditioning on the selected vertex's desired block wins.",
+        "word_mass": "The right-hand product of failures is the miss-age word mass for the specified age and miss kernels. The generic product/miss-row identity is kernel checked in ArtificialMiss.lean.",
+        "common_tape": "The independent randomness in Figures 2 and 6 can be fixed before all multiset inputs. The resulting procedure is a function of the input prefix and that tape. This is a realization convention of the published online construction."
+      },
+      "limits": [
+        "This declaration is not a kernel-proved theorem.",
+        "The reformulation combines the cited construction with its finite-state Markov and common-tape presentation; it is not a verbatim statement of one printed lemma.",
+        "It assumes no matching objective, dual feasibility, competitive factor, or new numerical feasibility bound.",
+        "The project's numerical all-multiplicity certificate must be proved separately."
+      ],
+      "downstream_checked_specializations": [
+        "WeightedMatching.capped_seed_multiset_selector",
+        "WeightedMatching.finite_seed_500_multiset_selector",
+        "WeightedMatching.SeedMultisetSelector.avoidance_finset",
+        "WeightedMatching.SeedMultisetSelector.measurable_avoidance"
+      ],
+      "module": "LiteratureSelector"
+    },
+    "WeightedMatching.kallenberg_independent_categorical_sampler": {
+      "declaration": "WeightedMatching.kallenberg_independent_categorical_sampler",
+      "module": "LiteratureSampling",
+      "kind": "explicit registered literature assumption",
+      "source": {
+        "authors": [
+          "Olav Kallenberg"
+        ],
+        "title": "Foundations of Modern Probability",
+        "edition": "Third edition, Springer, 2021",
+        "url": "https://doi.org/10.1007/978-3-030-61871-1",
+        "locations": [
+          "Lemma 4.22, kernels and randomization",
+          "Countable product construction of independent random variables"
+        ],
+        "formal_reference": "https://leanprover.github.io/hex/docs/Mathlib/Probability/Kernel/Representation.html"
+      },
+      "formulation": "Finite-output categorical randomization on a fixed countable common tape.",
+      "premises": [
+        "The output type is finite and nonempty.",
+        "Each requested categorical mass vector is nonnegative and sums to one."
+      ],
+      "conclusion": "There is one probability space and a draw function indexed by deterministic law, time, and slot. Draws are measurable in the tape, and every finite joint law at distinct time/slot coordinates is the product of the prescribed categorical laws.",
+      "correspondence": {
+        "randomization": "Apply the kernel randomization lemma to categorical laws, using one uniform variable per time/slot.",
+        "independence": "A countable product of uniform laws supplies independent coordinates.",
+        "integrals": "The finite joint expectation formula is equality in distribution, and every real function of finitely many finite-valued coordinates is bounded and integrable.",
+        "causality": "The actual sampled-history prefix identity is proved in LiteratureSampling.lean and is not part of this assumption."
+      },
+      "limits": [
+        "This declaration is not kernel proved in this repository.",
+        "Alternative laws at the same time/slot reuse the same random coordinate; no independence between alternative inputs is asserted.",
+        "It gives no selector, matching, competitive ratio, or numerical feasibility guarantee."
+      ]
+    }
+  }
+}

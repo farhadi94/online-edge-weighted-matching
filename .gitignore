@@ -1,0 +1,17 @@
+.tools/
+.venv/
+**/.lake/
+**/.build/
+**/__pycache__/
+*.pyc
+.DS_Store
+*.olean
+*.ilean
+*.log
+WeightedMatchingLean/verification/current/
+review/numerical/
+research/completion/install/
+research/completion/tournament/
+research/completion/lean/*-result.json
+research/completion/lean/verified-main-cache.json
+research/completion/lean/offline-widget-provenance.json

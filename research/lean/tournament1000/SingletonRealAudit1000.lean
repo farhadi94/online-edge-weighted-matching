@@ -1,0 +1,5 @@
+import SingletonSeed1000
+
+#print axioms WeightedMatching.Tournament1000.singleton_certificate_sound
+#print axioms WeightedMatching.Tournament1000.singleton_seed_certificate_sound
+#print axioms WeightedMatching.Tournament1000.singleton1000_tournament

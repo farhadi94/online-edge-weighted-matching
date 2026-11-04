@@ -1,0 +1,6 @@
+import SingletonCertificate1000
+#print axioms WeightedMatching.Tournament1000.checked_singleton_points
+#print axioms WeightedMatching.Tournament1000.checked_singleton_steps
+#print axioms WeightedMatching.Tournament1000.checked_singleton_terminal
+#print axioms WeightedMatching.Tournament1000.singletonRows1000_checked
+#print axioms WeightedMatching.Tournament1000.singletonCertificate1000
